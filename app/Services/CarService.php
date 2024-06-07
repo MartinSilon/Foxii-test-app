@@ -1,10 +1,9 @@
 <?php
-
 namespace App\Services;
 
 use App\Models\Car;
-use App\Models\Part;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CarService
 {
@@ -36,21 +35,21 @@ class CarService
         }
 
         // ---- PART COUNT FILTER ----
-        if ($request->filled('range')) {
-            $count = $request->input('range');
+        if ($request->filled('count')) {
+            $count = (int)$request->input('count');
 
-            if (strpos($count, '-')) {
-                [$min, $max] = array_map('intval', explode('-', $count));
+            $query->whereHas('parts', function ($query) use ($count) {
+                $query->select('car_id')
+                    ->groupBy('car_id')
+                    ->havingRaw('count(*) = ?', [$count]);
+            });
 
-                $query->whereHas('parts', function ($query) use ($min, $max) {
-                    $query->havingRaw('COUNT(*) BETWEEN ? AND ?', [$min, $max]);
-                });
-            } else {
-                $query->whereHas('parts', function ($query) use ($count) {
-                    $query->havingRaw('COUNT(id) = ?', [$count]);
-                });
+            // If count is 0, include cars with no parts
+            if ($count === 0) {
+                $query->orWhereDoesntHave('parts');
             }
         }
+
 
         return $query->withCount('parts')->orderByDesc('created_at')->get();
     }

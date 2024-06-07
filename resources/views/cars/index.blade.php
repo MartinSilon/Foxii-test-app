@@ -74,7 +74,7 @@
                                 <option value="" {{ request('registered') === '1' || request('registered') === '0' ? '' : 'selected' }}>-</option>
                             </select>
 
-                            <input type="text" name="range" class="form-control" placeholder="Počet dielov: 1, 3, 5-10" value="{{ request('range') }}">
+                            <input type="text" name="count" class="form-control" placeholder="Počet dielov k vozidlu" value="{{ request('count') }}">
 
                             <button type="submit" class="btn btn-primary">Filtrovať</button>
                         </form>
