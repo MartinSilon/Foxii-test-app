@@ -1,0 +1,33 @@
+#home{
+    height: 100vh;
+    width: 100vw;
+
+    .col-md-6{
+        text-decoration: none;
+        height: 100vh;
+        transition: 0.8s;
+        background-size: 100%;
+        background-position: center center;
+        &:hover{
+            background-size: 105%;
+        }
+
+        h1{
+            font-size: 8em;
+            font-family: "thin";
+        }
+        h2{
+            font-family: "medium";
+        }
+    }
+
+
+    .cars-div{
+        background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.3)), url("/images/cars.jpg");
+
+    }
+    .parts-div{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), url("/images/parts.jpg");
+
+    }
+}

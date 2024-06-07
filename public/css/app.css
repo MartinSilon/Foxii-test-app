@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "bold";
+  src: url("../fonts/Montserrat-Bold.ttf");
+}
+@font-face {
+  font-family: "medium";
+  src: url("../fonts/Montserrat-Medium.ttf");
+}
+@font-face {
+  font-family: "thin";
+  src: url("../fonts/Montserrat-Thin.ttf");
+}
+#home {
+  height: 100vh;
+  width: 100vw;
+}
+#home .col-md-6 {
+  text-decoration: none;
+  height: 100vh;
+  transition: 0.8s;
+  background-size: 100%;
+  background-position: center center;
+}
+#home .col-md-6:hover {
+  background-size: 105%;
+}
+#home .col-md-6 h1 {
+  font-size: 8em;
+  font-family: "thin";
+}
+#home .col-md-6 h2 {
+  font-family: "medium";
+}
+#home .cars-div {
+  background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.3)), url("/images/cars.jpg");
+}
+#home .parts-div {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgb(0, 0, 0)), url("/images/parts.jpg");
+}
+
+#list {
+  width: 100vw;
+  background-size: cover;
+  background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0.3)), url("/images/list-bck.jpg");
+  font-family: "medium";
+}
+#list .container .col-md-1 a {
+  text-decoration: none;
+  color: white;
+}
+#list .container h1 {
+  font-size: 3em;
+  font-family: "thin";
+}
+#list .container .bg-white {
+  min-height: 100vh;
+}
+#list .container .bg-white .accordion-button {
+  background-color: black;
+  color: white;
+}
+#list .container .bg-white form input,
+#list .container .bg-white form select {
+  border: 2px solid black;
+}
+#list .container .bg-white form button {
+  background-color: transparent;
+  border: 2px solid black;
+  color: black;
+  transition: 0.5s;
+}
+#list .container .bg-white form button:hover {
+  background-color: black;
+  color: white;
+}
+#list .container .bg-white form .btn-danger {
+  background-color: darkred;
+  border: 2px solid darkred;
+  color: white;
+  transition: 0.5s;
+}
+#list .container .bg-white form .btn-danger:hover {
+  background-color: black;
+  color: white;
+}
+#list .container .bg-white table .head-row {
+  border-bottom: 3px solid black;
+}
+#list .container .bg-white table tr {
+  border-bottom: 1px solid black;
+}
+#list .container .bg-white table tr td {
+  width: 20%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/*# sourceMappingURL=app.css.map */
